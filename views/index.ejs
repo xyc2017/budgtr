@@ -1,0 +1,19 @@
+<%- include("../partials/head.ejs") %> 
+<!-- can't remember what this is for -->
+
+<link rel="stylesheet" href="/normalize.css">
+<link rel="stylesheet" href="/skeleton.css">
+<h1>Budgtr ALL</h1>
+<div class="container"></div>
+
+
+<table>
+    <% for (let i=0; i<budget.length; i++){ %>
+    <tr>
+        <td><%=budget[i].date %></td>
+       <a href="/budget/<%=i %>"> <td><%=budget[i].name %></td> </a>
+        <td><%=budget[i].amount %></td>
+    </tr>
+    <% } %>
+</table>
+<button type="button"><a href="/budget/<%=new %>">Add New Item</a></button>
