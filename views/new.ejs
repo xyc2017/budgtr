@@ -1,14 +1,14 @@
-<%- include("../partials/head.ejs") %>
+
 
 <link rel="stylesheet" href="/normalize.css">
 <link rel="stylesheet" href="/skeleton.css">
 <h1>Add New Item</h1>
 <div>
 <form action="/budget" method="post">
-    <input type="text" date="date" placeholder="enter date here">
+    <input type="text" name="date" placeholder="enter date here">
     <input type="text" name="name" placeholder="enter name here">
-    <input type=number amount="amount" placeholder="enter amount here">
-    <input type="from" from="from" placeholder="enter from here">
+    <input type="number" name="amount" placeholder="enter amount here">
+    <input type="from" name="from" placeholder="enter from here">
     <input type="submit" value="Add">
 <!-- don't know how to add tags -->
 </form>

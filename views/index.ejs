@@ -1,19 +1,36 @@
-<%- include("../partials/head.ejs") %> 
-<!-- can't remember what this is for -->
+<!DOCTYPE html>
+<html lang="en" >
+<head> 
 
 <link rel="stylesheet" href="/normalize.css">
 <link rel="stylesheet" href="/skeleton.css">
+</head>
+<body>
+
+
 <h1>Budgtr ALL</h1>
-<div class="container"></div>
+<div class="container">
 
 
 <table>
-    <% for (let i=0; i<budget.length; i++){ %>
+    <thead>
+        <th>Date</th>
+        <th>Name</th>
+        <th>Amount</th>
+    </thead>
+   <tbody>
+    <% for (let budget in budgets){ %>
+         
     <tr>
-        <td><%=budget[i].date %></td>
-       <a href="/budget/<%=i %>"> <td><%=budget[i].name %></td> </a>
-        <td><%=budget[i].amount %></td>
+        <td><%=budgets[budget].date %></td>
+       <td><a href="/budget/<%=budget %>"><%=budgets[budget].name %></a></td> 
+        <td><%=budgets[budget].amount %></td>
     </tr>
+        
     <% } %>
+    </tbody>
 </table>
-<button type="button"><a href="/budget/<%=new %>">Add New Item</a></button>
+<a href="/budget/new"><button type="button">Add New Item</button></a>
+</div>
+</body>
+</html>
